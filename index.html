@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Integral University | BCA & MCA Project Showcase</title>
+<style>
+:root{--ink:#14213d;--muted:#62718a;--line:#dce5f2;--bg:#f4f7fc;--blue:#1768e8;--blue2:#0e3b9b;--purple:#6b35d5;--green:#0b9b6a;--shadow:0 12px 30px rgba(24,54,105,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Segoe UI,Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer}
+.site-header{background:linear-gradient(110deg,#071b55,#173ca7 60%,#5426c8);color:#fff;padding:20px clamp(16px,4vw,54px);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:13px}.seal{width:56px;height:56px;border-radius:50%;background:#fff;color:#16347f;display:grid;place-items:center;font-weight:900;border:3px solid #c8dcff;letter-spacing:-1px}.brand h1{font-size:clamp(18px,2vw,25px);margin:0 0 4px}.brand p{margin:0;color:#dce8ff;font-size:13px;line-height:1.5}.header-right{text-align:right}.header-right strong{display:block;font-size:15px}.header-right span{font-size:12px;color:#dce8ff}
+main{width:min(1440px,100%);margin:auto;padding:28px clamp(14px,3vw,38px) 44px}.hero{display:flex;justify-content:space-between;align-items:end;gap:18px;flex-wrap:wrap;margin-bottom:20px}.eyebrow{text-transform:uppercase;color:var(--blue);font-weight:800;font-size:11px;letter-spacing:1.5px}.hero h2{font-size:clamp(27px,3.2vw,40px);margin:8px 0}.hero p{margin:0;color:var(--muted);line-height:1.6;max-width:760px}.session-pill{background:#fff;border:1px solid var(--line);padding:12px 16px;border-radius:13px;font-size:13px;font-weight:800;box-shadow:var(--shadow)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0}.stat{background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px}.stat span{display:block;font-size:12px;color:var(--muted)}.stat strong{display:block;font-size:25px;margin-top:5px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:15px;padding:12px;margin:20px 0}.toolbar input,.toolbar select{flex:1;min-width:170px;border:1px solid #d8e1ef;border-radius:10px;padding:11px 12px;background:#fff;color:var(--ink)}.toolbar button{border:0;background:var(--ink);color:white;border-radius:10px;padding:11px 16px;font-weight:700}
+.program-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}.program-grid.single-program{grid-template-columns:1fr}.program-grid.empty-program{grid-template-columns:1fr}.program{min-width:0;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}.program-head{padding:20px;color:white;display:flex;align-items:center;justify-content:space-between;gap:12px}.bca .program-head{background:linear-gradient(110deg,#0876e8,#1746b5)}.mca .program-head{background:linear-gradient(110deg,#6e32d6,#40209b)}.program-head h3{margin:0 0 4px;font-size:27px}.program-head p{margin:0;color:#e4edff;font-size:12px}.program-head .cap{font-size:30px}.count{border:1px solid #ffffff55;background:#ffffff22;padding:7px 10px;border-radius:30px;font-size:11px;font-weight:800;white-space:nowrap}
+.program-content{padding:15px}.section-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:2px 0 12px}.section-row h4{margin:0;font-size:16px}.section-row small{color:var(--muted)}.group-carousel{position:relative}.group-track{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:3px 2px 12px;scrollbar-width:thin;scrollbar-color:#b9c9e4 transparent}.group-card{scroll-snap-align:start;flex:0 0 142px;text-align:left;border:1px solid var(--line);border-radius:14px;padding:13px;background:linear-gradient(145deg,#fff,#f5f8ff);color:var(--ink);transition:.18s}.mca .group-card{background:linear-gradient(145deg,#fff,#f8f4ff)}.group-card:hover,.group-card.active{border-color:#4389f5;box-shadow:0 0 0 2px #4389f522;transform:translateY(-1px)}.group-letter{width:35px;height:35px;border-radius:10px;background:#e0edff;color:#1354b4;display:grid;place-items:center;font-size:17px;font-weight:900;margin-bottom:10px}.mca .group-letter{background:#ede4ff;color:#6231ba}.group-card strong{display:block;font-size:13px}.group-card span{display:block;color:var(--muted);font-size:11px;margin-top:5px;line-height:1.4}.group-card .teams{font-weight:800;color:#1456b7}.carousel-controls{display:flex;gap:6px}.circle-btn{border:1px solid var(--line);background:#fff;width:31px;height:31px;border-radius:50%;font-weight:900;color:#24416d}.selected-group{margin-top:8px;border:1px solid var(--line);border-radius:16px;overflow:hidden}.selected-head{padding:13px 14px;background:#edf4ff;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.mca .selected-head{background:#f2ebff}.selected-head h4{margin:0;font-size:16px}.selected-head p{margin:4px 0 0;color:var(--muted);font-size:11px}.repo-prefix{font:10px/1.5 ui-monospace,Consolas,monospace;background:#fff;border:1px solid #d4e0f3;padding:6px 8px;border-radius:8px;overflow-wrap:anywhere}
+.team-carousel{padding:12px;position:relative}.team-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 12px;scrollbar-width:thin;scrollbar-color:#b9c9e4 transparent}.project-card{scroll-snap-align:start;flex:0 0 min(290px,84%);border:1px solid var(--line);border-radius:15px;padding:14px;background:#fff;display:flex;flex-direction:column;min-height:255px}.project-card:hover{box-shadow:0 9px 20px #152f5b12;border-color:#b8ccec}.project-top{display:flex;align-items:start;justify-content:space-between;gap:8px}.project-icon{width:39px;height:39px;border-radius:11px;background:#fff1ce;display:grid;place-items:center;font-size:21px;flex-shrink:0}.mca .project-icon{background:#eee5ff}.project-card h5{font-size:14px;line-height:1.4;margin:10px 0 7px}.project-card .project-id{font-size:10px;font-weight:800;color:var(--blue);background:#eaf2ff;padding:5px 7px;border-radius:7px;white-space:nowrap}.project-card p{font-size:11px;color:var(--muted);line-height:1.55;margin:0 0 12px}.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:auto;padding-top:5px}.tag{background:#eef4ff;color:#34517e;padding:5px 7px;border-radius:6px;font-size:10px;font-weight:700}.mca .tag{background:#f1eaff;color:#5e3e91}.repo{font:10px/1.5 ui-monospace,Consolas,monospace;background:#f7f9fd;border:1px solid #e1e8f2;padding:8px;border-radius:8px;margin-top:12px;overflow-wrap:anywhere}.card-actions{display:flex;gap:7px;margin-top:9px}.btn{display:inline-block;text-decoration:none;border:1px solid #cdd9ea;background:white;color:#18335c;border-radius:8px;padding:8px 9px;font-size:10px;font-weight:800}.btn.primary{background:var(--blue);color:white;border-color:var(--blue)}.mca .btn.primary{background:var(--purple);border-color:var(--purple)}.empty{padding:22px;text-align:center;color:var(--muted);font-size:13px}.naming{margin-top:22px;background:#fff8d9;border:1px solid #f0dc86;border-radius:16px;padding:17px;display:grid;grid-template-columns:auto 1fr;gap:12px}.naming .bulb{font-size:25px}.naming h3{font-size:15px;margin:0 0 7px}.naming p{font-size:12px;color:#6d5b20;line-height:1.7;margin:0}.naming code{font-family:ui-monospace,Consolas,monospace;font-weight:800;color:#4a3a00}.footer{text-align:center;color:#7c899e;font-size:11px;padding:23px 0 0}.hidden{display:none!important}
+@media(max-width:1050px){.program-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.program-grid.single-program{grid-template-columns:1fr}.group-card{flex-basis:128px}}
+@media(max-width:780px){.program-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.header-right{text-align:left}}
+@media(max-width:480px){.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:21px}.program-content{padding:11px}.program-head{padding:17px}.group-card{flex-basis:125px}.session-pill{width:100%}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="brand"><div class="seal">IU</div><div><h1>INTEGRAL UNIVERSITY</h1><p>Department of Computer Application · Lucknow, Uttar Pradesh</p></div></div>
+  <div class="header-right"><strong>GitHub Project Showcase</strong><span>BCA & MCA · Group-wise · Team-wise · Project-wise</span></div>
+</header>
+<main>
+  <section class="hero">
+    <div><div class="eyebrow">Student project directory</div><h2>Discover. Explore. Build.</h2><p>Browse current-session projects by programme, class group and team. Select a group card, then slide through the project cards to explore repository names, project IDs and technology stacks.</p></div>
+    <div class="session-pill" id="sessionPill">📅 Session 2026–2027 &nbsp;|&nbsp; Repository year 2027</div>
+  </section>
+  <section class="stats">
+    <div class="stat"><span>Programmes</span><strong id="statProgrammes">02</strong></div>
+    <div class="stat"><span>Total class groups</span><strong id="statGroups">15</strong></div>
+    <div class="stat"><span>Project slots</span><strong id="statSlots">225</strong></div>
+    <div class="stat"><span>Members per team</span><strong id="statMembers">Up to 5</strong></div>
+  </section>
+  <section class="toolbar">
+    <input id="search" type="search" placeholder="Search project, team, ID or repository…" aria-label="Search projects">
+    <select id="programFilter" aria-label="Programme"><option value="ALL">BCA + MCA</option><option value="BCA">BCA only</option><option value="MCA">MCA only</option></select>
+    <select id="groupFilter" aria-label="Group"><option value="ALL">All groups</option></select>
+    <button id="reset">Reset</button>
+  </section>
+  <div class="program-grid" id="programs"></div>
+  <section class="naming"><div class="bulb">💡</div><div><h3>Standard repository naming convention</h3><p>Repository names are generated from the JSON project record as <code>[PROGRAMME][YEAR]-[PROJECT-ID]-[TEAM-ID]</code>. Example: <code>BCA2027-PUGID26001-A01</code>. Team IDs use two digits (A01–A15). A GitHub button appears only when a real <code>repositoryUrl</code> is supplied in <code>data/projects.json</code>.</p></div></section>
+  <footer class="footer">Integral University · Department of Computer Application · Project records load from data/projects.json. Verify official IDs, titles, and repository URLs before publishing.</footer>
+</main>
+<script>
+const DATA_URL = "data/projects.json";
+let CONFIG = null;
+let PROJECTS = [];
+const state = { selectedGroup: { BCA: null, MCA: null } };
+const $ = (id) => document.getElementById(id);
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function programmeKeys() { return Object.keys(CONFIG.programmes); }
+function groupsFor(programme) { return CONFIG.programmes[programme]?.groups || []; }
+function recordsFor(programme, group) { return PROJECTS.filter(p => p.programme === programme && p.group === group); }
+function allGroups() { return [...new Set(programmeKeys().flatMap(groupsFor))].sort(); }
+function updateStats() {
+  const meta = CONFIG.meta;
+  $("statProgrammes").textContent = programmeKeys().length;
+  $("statGroups").textContent = programmeKeys().reduce((n,p)=>n+groupsFor(p).length,0);
+  $("statSlots").textContent = PROJECTS.length;
+  $("statMembers").textContent = `Up to ${meta.teamMembersMax}`;
+  $("sessionPill").textContent = `📅 Session ${meta.session} | Repository year ${meta.repositoryYear}`;
+}
+function updateGroupFilterOptions() {
+  const filter = $("groupFilter");
+  filter.innerHTML = '<option value="ALL">All groups</option>';
+  allGroups().forEach(group => filter.add(new Option(`Group ${group}`, group)));
+}
+function programmeMarkup(programme) {
+  const config = CONFIG.programmes[programme];
+  const groups = groupsFor(programme);
+  const cls = config.className || programme.toLowerCase();
+  return `<section class="program ${escapeHTML(cls)}" data-program="${escapeHTML(programme)}">
+    <div class="program-head"><div><h3>${config.icon || '🎓'} ${escapeHTML(programme)}</h3><p>${escapeHTML(config.label)}</p></div><span class="count">${groups.length} GROUPS · ${groups.join('–')}</span></div>
+    <div class="program-content"><div class="section-row"><h4>Choose your class group</h4><div class="carousel-controls"><button class="circle-btn" data-scroll="groups-${programme}" data-dir="-1" aria-label="Scroll groups left">‹</button><button class="circle-btn" data-scroll="groups-${programme}" data-dir="1" aria-label="Scroll groups right">›</button></div></div>
+    <div class="group-carousel"><div class="group-track" id="groups-${programme}">${groups.map(group => {const count=recordsFor(programme,group).length;return `<button class="group-card" data-select-program="${programme}" data-group="${group}"><div class="group-letter">${group}</div><strong>Group ${group}</strong><span>Teams ${group}01–${group}${String(CONFIG.meta.maxTeamsPerGroup).padStart(2,'0')}</span><span class="teams">${count} project slots</span></button>`}).join('')}</div></div>
+    <div class="selected-group" id="selected-${programme}"></div></div></section>`;
+}
+function renderProgrammeShell() { $("programs").innerHTML = programmeKeys().map(programmeMarkup).join(""); }
+function renderGroup(programme, group) {
+  const groups=groupsFor(programme);
+  if (!groups.length) { $(`selected-${programme}`).innerHTML='<div class="empty">No groups configured.</div>'; return; }
+  const selected=groups.includes(group)?group:groups[0]; state.selectedGroup[programme]=selected;
+  document.querySelectorAll(`[data-select-program="${programme}"]`).forEach(b=>b.classList.toggle('active',b.dataset.group===selected));
+  const records=recordsFor(programme,selected);
+  $(`selected-${programme}`).innerHTML=`<div class="selected-head"><div><h4>Group ${selected} · ${programme}</h4><p>Browse project slots from the shared JSON data file</p></div><div class="repo-prefix">${programme}${CONFIG.meta.repositoryYear}-[PROJECT-ID]-${selected}##</div></div>
+  <div class="team-carousel"><div class="section-row"><small>${records.length} team/project slots</small><div class="carousel-controls"><button class="circle-btn" data-scroll="teams-${programme}" data-dir="-1" aria-label="Previous project cards">‹</button><button class="circle-btn" data-scroll="teams-${programme}" data-dir="1" aria-label="Next project cards">›</button></div></div><div class="team-track" id="teams-${programme}"></div></div>`;
+  renderTeams(programme,selected);
+}
+function projectCard(p) {
+ const tech=Array.isArray(p.technologies)?p.technologies:[];
+ const repoUrl=/^https?:\/\//i.test(p.repositoryUrl||'')?p.repositoryUrl:'';
+ const demoUrl=/^https?:\/\//i.test(p.demoUrl||'')?p.demoUrl:'';
+ const liveUrl=/^https?:\/\//i.test(p.liveUrl||'')?p.liveUrl:'';
+ const status=(p.status||'pending').toLowerCase();
+ return `<article class="project-card"><div class="project-top"><div class="project-icon">📁</div><span class="project-id">${escapeHTML(p.projectId)}</span></div>
+ <h5>${escapeHTML(p.title || 'Project details pending')}</h5><p>${escapeHTML(p.description || 'Project description pending.')}</p>
+ <div class="tags">${tech.length?tech.map(t=>`<span class="tag">${escapeHTML(t)}</span>`).join(''):'<span class="tag">Technology stack pending</span>'}<span class="tag">${escapeHTML(status)}</span></div>
+ <div class="repo">${escapeHTML(p.repositoryName)}<br><small>${escapeHTML(p.teamId)} · ${escapeHTML(p.programme)} Group ${escapeHTML(p.group)}</small></div>
+ <div class="card-actions"><button class="btn" data-copy="${escapeHTML(p.repositoryName)}">Copy repo name</button>${repoUrl?`<a class="btn primary" href="${escapeHTML(repoUrl)}" target="_blank" rel="noopener noreferrer">GitHub repo ↗</a>`:'<button class="btn" disabled title="Repository URL not provided in projects.json">Repo pending</button>'}${demoUrl?`<a class="btn" href="${escapeHTML(demoUrl)}" target="_blank" rel="noopener noreferrer">Demo ↗</a>`:''}${liveUrl?`<a class="btn" href="${escapeHTML(liveUrl)}" target="_blank" rel="noopener noreferrer">Live ↗</a>`:''}</div></article>`;
+}
+function renderTeams(programme,group) {
+ const track=$(`teams-${programme}`); if(!track)return;
+ const query=$("search").value.trim().toLowerCase();
+ const list=recordsFor(programme,group).filter(p=>[p.programme,p.group,p.teamId,p.projectId,p.title,p.description,p.repositoryName,p.repositoryUrl,...(p.technologies||[])].join(' ').toLowerCase().includes(query));
+ track.innerHTML=list.length?list.map(projectCard).join(''):`<div class="empty">No project slots match this search in ${programme} · Group ${group}.</div>`;
+}
+function refresh() {
+ const pf=$("programFilter").value, gf=$("groupFilter").value;
+ const search=$("search").value.trim().toLowerCase();
+ let visible=programmeKeys().filter(p=>pf==='ALL'||p===pf);
+ if(gf!=='ALL'){const matching=visible.filter(p=>groupsFor(p).includes(gf));if(matching.length)visible=matching;}
+ document.querySelectorAll('.program').forEach(el=>el.classList.toggle('hidden',!visible.includes(el.dataset.program)));
+ $('programs').classList.toggle('single-program',visible.length===1);
+ $('programs').classList.toggle('empty-program',visible.length===0);
+ visible.forEach(p=>{const group=gf!=='ALL'&&groupsFor(p).includes(gf)?gf:(state.selectedGroup[p]&&groupsFor(p).includes(state.selectedGroup[p])?state.selectedGroup[p]:groupsFor(p)[0]);renderGroup(p,group);if(search)renderTeams(p,group);});
+ if(!visible.length)$('programs').innerHTML='<div class="empty">No programme/group combination is available.</div>';
+}
+document.addEventListener('click',async event=>{
+ const groupButton=event.target.closest('[data-select-program]');
+ if(groupButton){state.selectedGroup[groupButton.dataset.selectProgram]=groupButton.dataset.group;$('groupFilter').value=groupButton.dataset.group;refresh();return;}
+ const scroll=event.target.closest('[data-scroll]');if(scroll){const el=$(scroll.dataset.scroll);if(el)el.scrollBy({left:Number(scroll.dataset.dir)*Math.max(230,el.clientWidth*.8),behavior:'smooth'});return;}
+ const copy=event.target.closest('[data-copy]');if(copy){try{await navigator.clipboard.writeText(copy.dataset.copy);copy.textContent='Copied!';setTimeout(()=>copy.textContent='Copy repo name',1200);}catch{prompt('Copy repository name:',copy.dataset.copy);} }
+});
+$('search').addEventListener('input',refresh);$('programFilter').addEventListener('change',refresh);$('groupFilter').addEventListener('change',refresh);
+$('reset').addEventListener('click',()=>{$('search').value='';$('programFilter').value='ALL';$('groupFilter').value='ALL';programmeKeys().forEach(p=>state.selectedGroup[p]=null);refresh();});
+async function init(){
+ try {
+  const response=await fetch(DATA_URL,{cache:'no-store'});if(!response.ok)throw new Error(`Could not load ${DATA_URL} (${response.status})`);
+  const data=await response.json();CONFIG=data.config;PROJECTS=data.projects||[];
+  if(!CONFIG?.programmes||!Array.isArray(PROJECTS))throw new Error('projects.json has an invalid structure.');
+  updateStats();updateGroupFilterOptions();renderProgrammeShell();refresh();
+ } catch(error) {
+  $('programs').innerHTML=`<div class="empty"><strong>Project data could not be loaded.</strong><br>${escapeHTML(error.message)}<br><br>Ensure <code>data/projects.json</code> is deployed beside this index.html and open the site through a web server (not file://).</div>`;
+ }
+}
+init();
+</script>
+</body>
+</html>
