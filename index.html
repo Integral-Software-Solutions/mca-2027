@@ -104,7 +104,7 @@ function projectCard(p) {
  <h5>${escapeHTML(p.title || 'Project details pending')}</h5><p>${escapeHTML(p.description || 'Project description pending.')}</p>
  <div class="tags">${tech.length?tech.map(t=>`<span class="tag">${escapeHTML(t)}</span>`).join(''):'<span class="tag">Technology stack pending</span>'}<span class="tag">${escapeHTML(status)}</span></div>
  <div class="repo">${escapeHTML(p.repositoryName)}<br><small>${escapeHTML(p.teamId)} · ${escapeHTML(p.programme)} Group ${escapeHTML(p.group)}</small></div>
- <div class="card-actions"><button class="btn" data-copy="${escapeHTML(p.repositoryName)}">Copy repo name</button>${repoUrl?`<a class="btn primary" href="${escapeHTML(repoUrl)}" target="_blank" rel="noopener noreferrer">GitHub repo ↗</a>`:'<button class="btn" disabled title="Repository URL not provided in projects.json">Repo pending</button>'}${demoUrl?`<a class="btn" href="${escapeHTML(demoUrl)}" target="_blank" rel="noopener noreferrer">Demo ↗</a>`:''}${liveUrl?`<a class="btn" href="${escapeHTML(liveUrl)}" target="_blank" rel="noopener noreferrer">Live ↗</a>`:''}</div></article>`;
+ <div class="card-actions"><button class="btn" data-copy="${escapeHTML(p.repositoryName)}">Live Demo</button>${repoUrl?`<a class="btn primary" href="${escapeHTML(repoUrl)}" target="_blank" rel="noopener noreferrer">GitHub repo ↗</a>`:'<button class="btn" disabled title="Repository URL not provided in projects.json">Repo pending</button>'}${demoUrl?`<a class="btn" href="${escapeHTML(demoUrl)}" target="_blank" rel="noopener noreferrer">Demo ↗</a>`:''}${liveUrl?`<a class="btn" href="${escapeHTML(liveUrl)}" target="_blank" rel="noopener noreferrer">Live ↗</a>`:''}</div></article>`;
 }
 function renderTeams(programme,group) {
  const track=$(`teams-${programme}`); if(!track)return;
@@ -127,7 +127,7 @@ document.addEventListener('click',async event=>{
  const groupButton=event.target.closest('[data-select-program]');
  if(groupButton){state.selectedGroup[groupButton.dataset.selectProgram]=groupButton.dataset.group;$('groupFilter').value=groupButton.dataset.group;refresh();return;}
  const scroll=event.target.closest('[data-scroll]');if(scroll){const el=$(scroll.dataset.scroll);if(el)el.scrollBy({left:Number(scroll.dataset.dir)*Math.max(230,el.clientWidth*.8),behavior:'smooth'});return;}
- const copy=event.target.closest('[data-copy]');if(copy){try{await navigator.clipboard.writeText(copy.dataset.copy);copy.textContent='Copied!';setTimeout(()=>copy.textContent='Copy repo name',1200);}catch{prompt('Copy repository name:',copy.dataset.copy);} }
+ const copy=event.target.closest('[data-copy]');if(copy){try{await navigator.clipboard.writeText(copy.dataset.copy);copy.textContent='Copied!';setTimeout(()=>copy.textContent='Live Demo',1200);}catch{prompt('Copy repository name:',copy.dataset.copy);} }
 });
 $('search').addEventListener('input',refresh);$('programFilter').addEventListener('change',refresh);$('groupFilter').addEventListener('change',refresh);
 $('reset').addEventListener('click',()=>{$('search').value='';$('programFilter').value='ALL';$('groupFilter').value='ALL';programmeKeys().forEach(p=>state.selectedGroup[p]=null);refresh();});
